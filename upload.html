@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+    <script src = "/staticfiles/jQuery/jquery-3.0.0.js"></script>
+    <link href="/staticfiles/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/staticfiles/css/index.css" rel="stylesheet">
+    <script src = "/staticfiles/bootstrap/js/bootstrap.js"></script>
+    <script src = "/staticfiles/angular-1.3.0/angular.js"></script>
+    <script src = "/staticfiles/angular-1.3.0/angular-ui-router.js"></script>
+</head>
+
+
+
+
+<body>
+    <div class = "main-wrapper">
+        <nav class="navbar" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand">计算机图形学</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/">课程信息</a></li>
+                <li><a href = "/upload">提交作业</a></li>
+            </ul>
+        </nav>
+
+        <div class = "container">
+            <div class = "assignment">
+
+                <h1>第一次作业：读入与显示 <small>截止时间：11月7日</small></h1>
+                <br/>
+                <div>
+                    <div>
+                        <h3>作业要求</h3>
+                        <ul>
+                            <li>调用OpengGL库函数绘制一个球面（10分）</li>
+                            <li>可改变视角从各个方向观察这个模型（5分）</li>
+                            <li>写一个Loader读入一个三维模型并绘制（.max .3ds或者 .obj）</li>
+                            <li>简历球面顶点与导入模型顶点之间的映射，实现球面向任意模型的变形动画（50分）</li>
+                            <li>作业报告（10分）</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>截止日期</h3>
+                        <h4>11月7日</h4>
+                    </div>
+                </div>
+                <div>
+                    <h3>上传文件</h3>
+                    <article>
+                        <div class = "row">
+                            <form id="form1" runat="server" onload = "createCode()" onsubmit="validateCode()">
+                                <div>
+                                    <table border="0" cellspacing="5" cellpadding="5" >
+                                        <tr>
+                                            <td></td><td> <div class="code" id="checkCode" onclick="createCode()" ></div></td>
+                                            <td><a  href="#" onclick="createCode()">看不清换一张</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>验证码：</td><td><input  style="float:left;" type="text"   id="inputCode" /></td><td>请输入验证码</td>
+                                        </tr>
+                                        <tr><td></td><td><input id="Button1"  onclick="validateCode();" type="button" value="确定" /></td><td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </form>
+                        </div>
+                        <div class = "row">
+
+
+                            <div class = "col-xs-6 col-sm-4">
+                                <p id = "upfile"><input type = "file" id ="myfile" /></p>
+                            </div>
+                            <div class = "col-sm-1"><input type = "button" value = "开始上传" onclick = "upload()" /></div>
+
+
+                        </div>
+                        <div class = "row">
+                            <div class="clearfix visible-xs-block"></div>
+                            <div class = "col-xs-4">
+                                <span id = "uptxt">上传进度</span>
+                                <span id = "upprog"></span>
+                            </div>
+
+                            <div>
+                                <button id = "stopbtn" style = "margin-left:15px">取消上传</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <p>
+
+                    </p>
+                </div>
+            </div>
+            <div class = "assignment">
+
+                <h1>第二次作业：读入与显示 <small>截止时间：11月7日</small></h1>
+                <br/>
+                <div>
+                    <div>
+                        <h3>作业要求</h3>
+                    </div>
+                    <div>
+                        <h3>截止日期</h3>
+                    </div>
+                </div>
+                <div>
+                    <h3>上传文件</h3>
+                    <p id = "upfile">
+                        <input type = "file" id ="myfile" />
+                    </p>
+                    <p>
+                        <input type = "button" value = "开始上传" onclick = "upload()" />
+                        <span id = "uptxt">上传进度</span>
+                        <span id = "upprog"></span>
+                        <button id = "stopbtn">Stop Uploading</button>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<script src = "/staticfiles/js/control.js"></script>
+<script src = "/staticfiles/js/iden_code.js"></script>
+</html>
